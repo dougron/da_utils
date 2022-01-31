@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<plugin_preset name="PlugInEmbellishmentOptioneer">
+	<cycle>1</cycle>
+	<plugin_preset name="PlugInAddEmbellishmentRhythm">
+		<chance>1.0</chance>
+		<rhythm_options>
+			<item>-1.0</item>
+			<item>-0.5</item>
+			<item>-1.25</item>
+		</rhythm_options>
+		<weighting>
+			<item>1.0</item>
+			<item>1.0</item>
+			<item>1.0</item>
+		</weighting>
+		<note_range>
+			<mode>2</mode>
+			<array>
+				<item>62</item>
+				<item>64</item>
+				<item>66</item>
+			</array>
+		</note_range>
+	</plugin_preset>
+	<plugin_preset name="PlugInAssignEmbellishment">
+		<embellishment_options>
+			<item>
+				<type>d</type>
+				<offset>1</offset>
+			</item>
+		</embellishment_options>
+		<weighting>
+			<item>1.0</item>
+		</weighting>
+	</plugin_preset>
+</plugin_preset>

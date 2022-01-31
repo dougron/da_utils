@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/acm.jar" sourcepath="D:/DougzJavaz/javajar/acm.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/max.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/poi-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/poi-examples-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/poi-excelant-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/poi-ooxml-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/poi-ooxml-schemas-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/poi-scratchpad-3.16.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/lib/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/lib/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/ooxml-lib/curvesapi-1.04.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/poi/poi-3.16/ooxml-lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="D:/Documents/DougzJavaz/javajar/org.apache.commons.io.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
