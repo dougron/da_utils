@@ -109,5 +109,45 @@ class TimeSignature_Test
 		Double[] tactii = ts.getTactusAsQuartersPositions();
 		assertEquals(4, tactii.length);
 	}
+	
+	
+	@Test
+	void given_4_4_time_when_positions_in_quarters_is_1_then_correct_list_is_returned() throws Exception {
+		TimeSignature ts = TimeSignature.FOUR_FOUR;
+		Double[] ssTactii = ts.getQuartersPositionNBelowSubtactus(1);
+		assertEquals(16, ssTactii.length);
+	}
+	
+	
+	@Test
+	void given_4_4_time_when_positions_in_quarters_is_2_then_correct_list_is_returned() throws Exception {
+		TimeSignature ts = TimeSignature.FOUR_FOUR;
+		Double[] ssTactii = ts.getQuartersPositionNBelowSubtactus(2);
+		assertEquals(32, ssTactii.length);
+	}
+	
+	
+	@Test
+	void given_4_4_time_when_positions_in_quarters_is_3_then_correct_list_is_returned() throws Exception {
+		TimeSignature ts = TimeSignature.FOUR_FOUR;
+		Double[] ssTactii = ts.getQuartersPositionNBelowSubtactus(3);
+		assertEquals(64, ssTactii.length);
+	}
+	
+	
+	@Test
+	void given_7_8_time_when_positions_in_quarters_is_1_then_correct_list_is_returned() throws Exception {
+		TimeSignature ts = TimeSignature.SEVEN_EIGHT_322;
+		Double[] ssTactii = ts.getQuartersPositionNBelowSubtactus(1);
+		assertEquals(14, ssTactii.length);
+	}
+	
+	
+	@Test
+	void given_7_8_time_when_positions_in_quarters_is_2_then_correct_list_is_returned() throws Exception {
+		TimeSignature ts = TimeSignature.SEVEN_EIGHT_322;
+		Double[] ssTactii = ts.getQuartersPositionNBelowSubtactus(2);
+		assertEquals(28, ssTactii.length);
+	}
 
 }

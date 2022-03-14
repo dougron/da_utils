@@ -996,6 +996,13 @@ public class TimeSignature  implements TSGenInterface{
 	}
 	
 	
+	
+	public HashMap<Double, Integer> getStrengthMap()
+	{
+		return strengthMap;
+	}
+	
+	
 	public static Iterator<TimeSignature> getPresetTimeSignatureIterator()
 	{
 		return searchableMap.values().iterator();
@@ -1202,6 +1209,26 @@ public class TimeSignature  implements TSGenInterface{
 
 	
 	
+	// n must be > 0, and at this resolution I am assuming that all subdivisions are by a half, so harbour no expectation of triplet 64ths or some such hangover from 20th century art music notation
+	public Double[] getQuartersPositionNBelowSubtactus(int n)
+	{
+		if (n > 0)
+		{
+			List<Double> list = new ArrayList<Double>();
+			Double[] subTactusQuarters = getSubTactusAsQuartersPositions();
+			double increment = getSubTactusLength() / (Math.pow(2, n));
+			for (Double d: subTactusQuarters)
+			{
+				list.add(d);
+				for (int i = 0; i < Math.pow(2, n) - 1; i++)
+				{
+					list.add(d + (increment * (i + 1)));
+				}
+			}
+			return list.toArray(new Double[list.size()]);
+		}
+		return new Double[] {};
+	}
 
 
 }
