@@ -605,7 +605,8 @@ public class KeyAnalysis {
 				break;
 		case 7: degree = "V";					// V or V7 does not score one way or another with major or minor
 				score = primaryScore;
-				dominantScore = this.HIGH_3CHORD_SCORE + 1;
+//				dominantScore = this.HIGH_3CHORD_SCORE + 1;
+				dominantScore = this.HIGH_3CHORD_SCORE;
 				switch (rootMove_1to2){
 					case 5:
 						if (cc2.isMinorType()){

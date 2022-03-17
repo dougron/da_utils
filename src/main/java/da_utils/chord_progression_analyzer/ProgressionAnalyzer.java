@@ -32,7 +32,7 @@ public class ProgressionAnalyzer {
 	
 	public ProgressionAnalyzer(String path)
 	{
-		// this instantiator for testing only. ProgressionAnalyzer should not deal with LiveClip
+		// this constructor for testing only. ProgressionAnalyzer should not deal with LiveClip
 		// directly at all.
 		init(new ChordChunkList(DEFAULT_REZ, getLiveClip(path)));
 	}

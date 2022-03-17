@@ -17,14 +17,18 @@ class ProgressionAnalyzer_Test
 	static ArrayList<Integer> Dm7;
 	static ArrayList<Integer> G7;
 	static ArrayList<Integer> CMaj7;
+	static ArrayList<Integer> C;
+	static ArrayList<Integer> Dm;
 	
 	
 	@BeforeAll
 	static void makeNoteLists()
 	{
 		Dm7 = makeNoteList(new int[] {50, 53, 57, 60});
+		Dm = makeNoteList(new int[] {50, 53, 57});
 		G7 = makeNoteList(new int[] {50, 53, 55, 59});
 		CMaj7 = makeNoteList(new int[] {48, 52, 55, 59});
+		C = makeNoteList(new int[] {48, 52, 55});
 	}
 
 	
@@ -186,6 +190,26 @@ class ProgressionAnalyzer_Test
 	}
 
 	
+	@Test
+	final void single_major_chord_returns_correct_function_string()
+	{
+		LiveClip lc = makeLiveClip(new Object[] {0.0, 4.0, C});
+		ChordChunkList ccl = new ChordChunkList("4n", lc);
+		ProgressionAnalyzer pa = new ProgressionAnalyzer(ccl);
+//		System.out.println(pa.toString());
+		assertEquals("IMaj", pa.getPrevailingCIKO(2.0).functionString);
+	}
+	
+	
+	@Test
+	final void single_minor_chord_returns_correct_function_string()
+	{
+		LiveClip lc = makeLiveClip(new Object[] {0.0, 4.0, Dm});
+		ChordChunkList ccl = new ChordChunkList("4n", lc);
+		ProgressionAnalyzer pa = new ProgressionAnalyzer(ccl);
+//		System.out.println(pa.toString());
+		assertEquals("imin", pa.getPrevailingCIKO(2.0).functionString);
+	}
 	
 	
 }
