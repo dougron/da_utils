@@ -23,7 +23,7 @@ public class CSD {
 	
 //	private static ArrayList<NotePattern> npList = new ArrayList<NotePattern>();
 
-	public static ArrayList<NotePatternAnalysis> getChordOptions(ArrayList<Integer> noteList)
+	public static List<NotePatternAnalysis> getChordOptions(List<Integer> noteList)
 	{
 		Integer[] noteSet = makeSetArray(noteList);					// noteList sorted, with unison doubling removed 
 		Integer lowestNote = noteSet[0];
@@ -278,7 +278,7 @@ public class CSD {
 
 	
 	
-	private static Integer[] makeSetArray(ArrayList<Integer> noteList) 
+	private static Integer[] makeSetArray(List<Integer> noteList) 
 	{
 		TreeSet<Integer> noteSet = new TreeSet<Integer>();
 		for (Integer i: noteList)
@@ -714,7 +714,7 @@ public class CSD {
 				new int[] {5, 11},
 				new ChordToneName[] {ChordToneName.ROOT, ChordToneName.NINTH, ChordToneName.THIRD, ChordToneName.FIFTH, ChordToneName.SEVENTH}	
 				),
-		new NotePattern("9sus4", new int[]{0, 2, 5, 7, 10}, ROOT_POSITION_INDEX, new InversionHandler[]{	// same notes Maj69 chord
+		new NotePattern("9sus4", new int[]{0, 2, 5, 7, 10}, ROOT_POSITION_INDEX, new InversionHandler[]{	
 				new InversionHandler(ROOT_POSITION_INDEX, 0), 	
 				new InversionHandler(FOURTH_INVERSION_INDEX, 4), 
 				new InversionHandler(FIRST_INVERSION_INDEX, 3),	
@@ -724,7 +724,7 @@ public class CSD {
 				new int[] {9},
 				new ChordToneName[] {ChordToneName.ROOT, ChordToneName.NINTH, ChordToneName.THIRD, ChordToneName.FIFTH, ChordToneName.SEVENTH}	
 				),
-		new NotePattern("Maj9#5", new int[]{0, 2, 4, 8, 11}, ROOT_POSITION_INDEX, new InversionHandler[]{	// same notes Maj69 chord
+		new NotePattern("Maj9#5", new int[]{0, 2, 4, 8, 11}, ROOT_POSITION_INDEX, new InversionHandler[]{	
 				new InversionHandler(ROOT_POSITION_INDEX, 0), 	
 				new InversionHandler(FOURTH_INVERSION_INDEX, 4), 
 				new InversionHandler(FIRST_INVERSION_INDEX, 3),	
@@ -734,7 +734,7 @@ public class CSD {
 				new int[] {6},
 				new ChordToneName[] {ChordToneName.ROOT, ChordToneName.NINTH, ChordToneName.THIRD, ChordToneName.FIFTH, ChordToneName.SEVENTH}	
 				),
-		new NotePattern("m9M7", new int[]{0, 2, 3, 7, 11}, ROOT_POSITION_INDEX, new InversionHandler[]{	// same notes Maj69 chord
+		new NotePattern("m9M7", new int[]{0, 2, 3, 7, 11}, ROOT_POSITION_INDEX, new InversionHandler[]{	
 				new InversionHandler(ROOT_POSITION_INDEX, 0), 	
 				new InversionHandler(FOURTH_INVERSION_INDEX, 4), 
 				new InversionHandler(FIRST_INVERSION_INDEX, 3),	
@@ -743,6 +743,16 @@ public class CSD {
 				new XMLChordElement[] {XMLChordElement.MAJOR_MINOR, XMLChordElement.NINE},
 				new int[] {5, 9},
 				new ChordToneName[] {ChordToneName.ROOT, ChordToneName.NINTH, ChordToneName.THIRD, ChordToneName.FIFTH, ChordToneName.SEVENTH}	
+				),
+		new NotePattern("m11", new int[]{0, 2, 3, 5, 7, 10}, ROOT_POSITION_INDEX, new InversionHandler[]{	
+				new InversionHandler(ROOT_POSITION_INDEX, 0), 	
+				new InversionHandler(FOURTH_INVERSION_INDEX, 5), 
+				new InversionHandler(FIRST_INVERSION_INDEX, 4),	
+				new InversionHandler(SECOND_INVERSION_INDEX, 2),	
+				new InversionHandler(THIRD_INVERSION_INDEX, 1)},
+				new XMLChordElement[] {XMLChordElement.MINOR_7, XMLChordElement.NINE, XMLChordElement.ELEVEN},
+				new int[] {9},
+				new ChordToneName[] {ChordToneName.ROOT, ChordToneName.NINTH, ChordToneName.THIRD, ChordToneName.ELEVENTH, ChordToneName.FIFTH, ChordToneName.SEVENTH}	
 				),
 
 	};

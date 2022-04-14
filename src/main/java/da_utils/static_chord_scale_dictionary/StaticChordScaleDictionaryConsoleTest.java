@@ -1,15 +1,15 @@
 package main.java.da_utils.static_chord_scale_dictionary;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 import acm.program.ConsoleProgram;
 
-public class StaticChordScaleDictionaryConsoleTest extends ConsoleProgram{
+public class StaticChordScaleDictionaryConsoleTest
+{
 
 	
-	public void run(){
-//		setSize(700, 900);
+	public StaticChordScaleDictionaryConsoleTest(){
 //		testCSDNotePatternResponse();
 //		testIntervalReturn();
 //		testTriadReturn();
@@ -21,9 +21,9 @@ public class StaticChordScaleDictionaryConsoleTest extends ConsoleProgram{
 		
 	}
 	private void testChordSymbolDecoder() {
-		int[] intervals = CSD.getChordTones("Adfsdf");
+		int[] intervals = CSD.getChordTones("A");
 		for (int i: intervals) {
-			println(i);
+			System.out.println(i);
 		}
 	}
 	private void testScalesAndModes() {
@@ -34,17 +34,17 @@ public class StaticChordScaleDictionaryConsoleTest extends ConsoleProgram{
 				CSD.DORIAN_FLAT_TWO, CSD.LYDIAN_SHARP_FIVE, CSD.LYDIAN_DOMINANT, CSD.MIXOLYDIAN_FLAT_13,
 				CSD.LOCIAN_NATURAL_9, CSD.ALTERED};
 //		for (ModeObject mo: moArr){
-//			println(mo.name);
+//			System.out.println(mo.name);
 //			int[] arr = CSD.getDiatonicModeDegrees(mo);
 //			for (int i: arr){
-//				println(i);
+//				System.out.println(i);
 //			}
 //		}
 		for (ModeObject mo: moArr){
-			println(mo.name);
+			System.out.println(mo.name);
 			int[][] arr = CSD.getChromaticModeModel(mo);
 			for (int[] ii: arr){
-				println(ii[0] + ", " + ii[1]);
+				System.out.println(ii[0] + ", " + ii[1]);
 			}
 		}
 		
@@ -52,61 +52,61 @@ public class StaticChordScaleDictionaryConsoleTest extends ConsoleProgram{
 	}
 	private void test9thchordReturn() {
 		for (CSDTestCase tcase: make9thChordList()){
-			ArrayList<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
+			List<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
 			printTestCaseNotes(tcase);		
-			println(coList.size() + " in coList");
+			System.out.println(coList.size() + " in coList");
 			for (NotePatternAnalysis npa: coList){
-				println(npa.toString());
+				System.out.println(npa.toString());
 			}
-			println("----------------------------------------");
+			System.out.println("----------------------------------------");
 		}
 		
 	}
 	private void testQuartadReturn() {
 		for (CSDTestCase tcase: makeQuartadList()){
-			ArrayList<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
+			List<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
 			printTestCaseNotes(tcase);		
-			println(coList.size() + " in coList");
+			System.out.println(coList.size() + " in coList");
 			for (NotePatternAnalysis npa: coList){
-				println(npa.toString());
+				System.out.println(npa.toString());
 			}
-			println("----------------------------------------");
+			System.out.println("----------------------------------------");
 		}
 		
 	}
 	private void testTriadReturn() {
 		for (CSDTestCase tcase: makeTriadTestList()){
-			ArrayList<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
+			List<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
 			printTestCaseNotes(tcase);		
-			println(coList.size() + " in coList");
+			System.out.println(coList.size() + " in coList");
 			for (NotePatternAnalysis npa: coList){
-				println(npa.toString());
+				System.out.println(npa.toString());
 			}
-			println("----------------------------------------");
+			System.out.println("----------------------------------------");
 		}
 		
 	}
 	private void testOddTriadReturn() {
 		for (CSDTestCase tcase: makeOddTriadTestList()){
-			ArrayList<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
+			List<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
 			printTestCaseNotes(tcase);		
-			println(coList.size() + " in coList");
+			System.out.println(coList.size() + " in coList");
 			for (NotePatternAnalysis npa: coList){
-				println(npa.toString());
+				System.out.println(npa.toString());
 			}
-			println("----------------------------------------");
+			System.out.println("----------------------------------------");
 		}
 		
 	}
 	private void testIntervalReturn() {
 		for (CSDTestCase tcase: makeIntervalTestList()){
-			ArrayList<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
+			List<NotePatternAnalysis> coList = CSD.getChordOptions(tcase.noteList);
 			printTestCaseNotes(tcase);		
-			println(coList.size() + " in coList");
+			System.out.println(coList.size() + " in coList");
 			for (NotePatternAnalysis npa: coList){
-				println(npa.toString());
+				System.out.println(npa.toString());
 			}
-			println("----------------------------------------");
+			System.out.println("----------------------------------------");
 		}
 		
 	}
@@ -115,7 +115,7 @@ public class StaticChordScaleDictionaryConsoleTest extends ConsoleProgram{
 		for (Integer i: tcase.noteList){
 			str += CSD.noteName(i) + ", ";
 		}
-		println(str);
+		System.out.println(str);
 		
 	}
 	private void testCSDNotePatternResponse(){
@@ -423,5 +423,11 @@ public class StaticChordScaleDictionaryConsoleTest extends ConsoleProgram{
 		caseList.add(new CSDTestCase("m9M7-3rd", new int[]{51, 52, 54, 55, 59}));
 		caseList.add(new CSDTestCase("m9M7-4th", new int[]{50, 51, 55, 59, 60}));
 		return caseList;
+	}
+	
+	
+	public static void main(String[] args)
+	{
+		StaticChordScaleDictionaryConsoleTest x = new StaticChordScaleDictionaryConsoleTest();
 	}
 }

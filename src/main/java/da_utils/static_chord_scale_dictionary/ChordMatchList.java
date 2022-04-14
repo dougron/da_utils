@@ -1,30 +1,48 @@
 package main.java.da_utils.static_chord_scale_dictionary;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ChordMatchList {
 
-	public ArrayList<NotePatternAnalysis> coList;
+	
+	public List<NotePatternAnalysis> coList;
 	CSDTestCase tcase;
 	
-	public ChordMatchList(int[] noteArr){
+	
+	
+	public ChordMatchList(int[] noteArr)
+	{
 		tcase = new CSDTestCase("", noteArr);
 		coList = CSD.getChordOptions(tcase.noteList);
 	}
-	public ChordMatchList(ArrayList<Integer> noteList){
+	
+	
+	
+	public ChordMatchList(ArrayList<Integer> noteList)
+	{
 		tcase = new CSDTestCase("", noteList);
 		coList = CSD.getChordOptions(tcase.noteList);
 	}
-	public ArrayList<Integer> bassSuggestions(){
+	
+	
+	
+	public ArrayList<Integer> bassSuggestions()
+	{
 		ArrayList<Integer> iList = new ArrayList<Integer>();
 		for (NotePatternAnalysis npa: coList){
 			iList.add(npa.rootNote());
 		}		
 		return iList;
 	}
-	public ArrayList<String> getTriadSuggestion(){
+	
+	
+	
+	public ArrayList<String> getTriadSuggestion()
+	{
 		ArrayList<String> triadList = new ArrayList<String>();
-		for (NotePatternAnalysis npa: coList){
+		for (NotePatternAnalysis npa: coList)
+		{
 			if (npa instanceof NP_Triad && npa.intervals().length == 3){
 				triadList.add(npa.name());
 			}
@@ -32,10 +50,16 @@ public class ChordMatchList {
 		
 		return triadList;
 	}
-	public ArrayList<String> getQuartadSuggestion(){
+	
+	
+	
+	public ArrayList<String> getQuartadSuggestion()
+	{
 		ArrayList<String> quartadList = new ArrayList<String>();
-		for (NotePatternAnalysis npa: coList){
-			if (npa instanceof NP_Triad && npa.intervals().length == 4){
+		for (NotePatternAnalysis npa: coList)
+		{
+			if (npa instanceof NP_Triad && npa.intervals().length == 4)
+			{
 				quartadList.add(npa.name());
 			}
 		}
@@ -45,10 +69,12 @@ public class ChordMatchList {
 	
 	
 	
-	public String toString(){
+	public String toString()
+	{
 		String str = "ChordMatchList: " + tcase.noteListToString();
 		
-		for (NotePatternAnalysis npa: coList){
+		for (NotePatternAnalysis npa: coList)
+		{
 			str += "\n" + npa.toString();
 		}
 		return str;

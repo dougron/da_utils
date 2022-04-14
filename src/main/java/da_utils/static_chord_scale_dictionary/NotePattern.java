@@ -223,17 +223,19 @@ public class NotePattern {
 	{
 		Integer[] arr = new Integer[intervals.length];
 		int inc = intervals.length - thisInversion;
-		for (int i = 0; i < intervals.length; i++){
+		for (int i = 0; i < intervals.length; i++)
+		{
 			arr[i] = intervals[(i + inc) % intervals.length];
 		}
 		Integer one = arr[0];
-		for (int i = 0; i < arr.length; i++){
-			if (arr[i] < one){
+		for (int i = 0; i < arr.length; i++)
+		{
+			if (arr[i] < one)
+			{
 				arr[i] += 12;
 			}
 			arr[i] -= one;
 		}
-		
 		return arr;
 	}
 
@@ -243,14 +245,16 @@ public class NotePattern {
 	{
 		NotePatternAnalysis npa = new NP_9thChord();
 		InversionHandler ih = inversionHandlerOptions[inversionOptionIndex];
-		if (ih.useNotePatternName){
+		if (ih.useNotePatternName)
+		{
 			npa.setName(name);
-		} else {
+		} 
+		else 
+		{
 			npa.setName(ih.name);
 		}
 		npa.setInversionIndex(inversionHandlerOptions[inversionOptionIndex].inversionIndex);
 		npa.setRootNoteIndex(ih.rootNoteIndex);
-//		npa.setIntervals(intervals);
 		return npa;
 	}
 
@@ -260,14 +264,16 @@ public class NotePattern {
 	{
 		NotePatternAnalysis npa = new NP_Triad();
 		InversionHandler ih = inversionHandlerOptions[inversionOptionIndex];
-		if (ih.useNotePatternName){
+		if (ih.useNotePatternName)
+		{
 			npa.setName(name);
-		} else {
+		} 
+		else 
+		{
 			npa.setName(ih.name);
 		}
 		npa.setInversionIndex(inversionHandlerOptions[inversionOptionIndex].inversionIndex);
 		npa.setRootNoteIndex(ih.rootNoteIndex);
-//		npa.setIntervals(intervals);
 		return npa;
 	}
 
@@ -276,11 +282,14 @@ public class NotePattern {
 	private NotePatternAnalysis intervalChordAnalysis(int inversionOptionIndex) 
 	{
 		NotePatternAnalysis npa = new NP_Interval();
-		if (inversionOptions == null){
+		if (inversionOptions == null)
+		{
 			InversionHandler ih = inversionHandlerOptions[inversionOptionIndex];
 			npa.setName(ih.name);
 			npa.setRootNoteIndex(ih.rootNoteIndex);
-		} else {
+		} 
+		else 
+		{
 			npa.setName(inversionOptions[inversionOptionIndex]);
 		}		
 		return npa;

@@ -5,14 +5,11 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
-import DLEditDistance.DLEditDistance;
 import main.java.da_utils.ableton_live.ableton_live_clip.LiveClip;
 import main.java.da_utils.ableton_live.ableton_live_clip.LiveMidiNote;
 import main.java.da_utils.algorithmic_models.pipeline.plugins.filter_sort.FilterObject;
 import main.java.da_utils.algorithmic_models.pipeline.plugins.filter_sort.FilterSortInterface;
+import main.java.da_utils.dl_edit_distance.DLEditDistance;
 import main.java.da_utils.resource_objects.chance_item.ChanceItem;
 
 public class AccentTemplate  implements FilterSortInterface{

@@ -1,6 +1,6 @@
 package main.java.da_utils.static_chord_scale_dictionary;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /*
  * asimilar to the ChordAnalysisObject, but using the StaticChordScaleDictionary
@@ -9,10 +9,12 @@ import java.util.ArrayList;
  */
 public class ChordAnalysis {
 	
-	private ArrayList<Integer> originalList;
+	
+	private List<Integer> originalList;
 
-	public ChordAnalysis(ArrayList<Integer> noteList){
+	
+	public ChordAnalysis(List<Integer> noteList)
+	{
 		this.originalList = noteList;
-		
 	}
 }

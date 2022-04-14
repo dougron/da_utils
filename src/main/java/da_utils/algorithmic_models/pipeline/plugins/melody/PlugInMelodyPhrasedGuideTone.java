@@ -9,8 +9,8 @@ import main.java.da_utils.algorithmic_models.pipeline.plugins.pipeline_plugin.Pi
 import main.java.da_utils.algorithmic_models.pipeline.plugins.pipeline_plugin.PlayPlugArgument;
 import main.java.da_utils.chord_progression_analyzer.ChordInKeyObject;
 import main.java.da_utils.chord_scale_dictionary.chord_analysis.ChordAnalysisObject;
+import main.java.da_utils.four_point_contour.FourPointContour;
 import main.java.da_utils.resource_objects.ChordForm;
-import DataObjects.contour.FourPointContour;
 import LegacyStuff.DAGlobals;
 /*
  * generates guide tone melody.

@@ -2,6 +2,7 @@ package main.java.da_utils.chord_progression_analyzer.chord_chunk;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 
 import main.java.da_utils.ableton_live.ableton_live_clip.LiveMidiNote;
 import main.java.da_utils.chord_progression_analyzer.ChordInKeyObject;
@@ -25,7 +26,7 @@ public class ChordChunk
 	
 	private static final int DEFAULT_VELOCITY = 64;
 	public ArrayList<LiveMidiNote> noteList = new ArrayList<LiveMidiNote>();
-	private ArrayList<NotePatternAnalysis> chordOptionList;
+	private List<NotePatternAnalysis> chordOptionList;
 	private int bestChordOptionIndex = -1;
 	private double position;
 	private double length;
@@ -142,7 +143,7 @@ public class ChordChunk
 	
 	
 	
-	public ArrayList<NotePatternAnalysis> getChordOptionList()
+	public List<NotePatternAnalysis> getChordOptionList()
 	{
 		return chordOptionList;
 	}

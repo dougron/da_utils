@@ -1,6 +1,7 @@
 package main.java.da_utils.static_chord_scale_dictionary;
 
-public class NP_Triad implements NotePatternAnalysis {
+public class NP_Triad implements NotePatternAnalysis 
+{
 	
 	private int lowestNote;
 	private boolean hasLowestNote = false;
@@ -23,40 +24,61 @@ public class NP_Triad implements NotePatternAnalysis {
 	private boolean isDiminishedSeventhType = false;
 	private int[] extendeChordToneIntervals;
 
+	
+	
 	@Override
-	public int lowestNote() {
+	public int lowestNote() 
+	{
 		return lowestNote;
 	}
 
+	
+	
 	@Override
-	public int rootNote() {
+	public int rootNote() 
+	{
 		return rootNote;
 	}
 
+	
+	
 	@Override
-	public int[] intervals() {
+	public int[] intervals() 
+	{
 		return intervals;
 	}
 
+	
+	
 	@Override
-	public String name() {
+	public String name() 
+	{
 		return name;
 	}
 
+	
+	
 	@Override
-	public void setLowestNote(int lowestNote) {
+	public void setLowestNote(int lowestNote) 
+	{
 		this.lowestNote = lowestNote;
 		hasLowestNote = true;
 	}
 
+	
+	
 	@Override
-	public void setRootNote(int rootNote) {
+	public void setRootNote(int rootNote) 
+	{
 		this.rootNote = rootNote;
 		hasRootNote = true;
 	}
 
+	
+	
 	@Override
-	public void setIntervals(int[] arr) {
+	public void setIntervals(int[] arr) 
+	{
 		this.intervals = arr;
 		hasIntervals = true;
 		doTypeTest();
@@ -65,141 +87,227 @@ public class NP_Triad implements NotePatternAnalysis {
 	
 
 	@Override
-	public void setName(String name) {
+	public void setName(String name) 
+	{
 		this.name = name;
 		hasName = true;
 	}
 
 
 	@Override
-	public int rootNoteIndex() {
+	public int rootNoteIndex() 
+	{
 		return rootNoteIndex;
 	}
 
+	
+	
 	@Override
-	public void setRootNoteIndex(int rootNoteIndex) {
+	public void setRootNoteIndex(int rootNoteIndex) 
+	{
 		this.rootNoteIndex = rootNoteIndex;
 		this.hasRootNoteIndex = true;
 	}
 
+	
+	
 	@Override
-	public void setIntervals(Integer[] arr) {
+	public void setIntervals(Integer[] arr) 
+	{
 		intervals = new int[arr.length];
-		for (int i = 0; i < arr.length; i++){
+		for (int i = 0; i < arr.length; i++)
+		{
 			intervals[i] = arr[i];
 		}
 		hasIntervals = true;
 		doTypeTest();
 	}
+	
+	
+	
 	@Override
-	public int inversionIndex() {
+	public int inversionIndex() 
+	{
 		return inversionIndex;
 	}
 
+	
+	
 	@Override
-	public String inversionName() {
+	public String inversionName() 
+	{
 		return CSD.inversionName(inversionIndex);
 	}
 
+	
+	
 	@Override
-	public void setInversionIndex(int i) {
+	public void setInversionIndex(int i) 
+	{
 		inversionIndex = i;
 		hasInversionIndex = true;
-		
 	}
-	public String toString(){
-		String str = "---\nNP_Triad instance of NotePatternAnalysis";
-		if (hasLowestNote){
-			str += "\nlowestNote=" + lowestNote + ", " + CSD.noteName(lowestNote);
-		} else {		
-			str += "\nlowestNote not set";
-		}
-		if (hasRootNoteIndex){
-			str += "\nrootNoteIndex=" + rootNoteIndex;
-		} else {
-			str += "\nrootNoteIndex not set";
-		}
-		if (hasRootNote){
-			str += "\nrootNote=" + rootNote + ", " + CSD.noteName(rootNote);
-		} else {
-			str += "\nrootNote not set";
-		}
-		if (hasInversionIndex){
-			str += "\ninversionIndex=" + inversionIndex + ", " + inversionName();
-		} else {
-			str += "\ninversionIndex not set";
-		}
-		if (hasName){
-			str += "\nname=" + name;
-		} else {
-			str += "\nname not set";
-		}
+	
+	
+	
+	public String toString()
+	{
+		StringBuilder sb = new StringBuilder();
+		sb.append("---\nNP_Triad instance of NotePatternAnalysis");
+		sb.append(getLowestNoteToString());
+		sb.append(getRootNoteIndexToString());
+		sb.append(getRootNoteToString());
+		sb.append(getInversionIndexToString());
+		sb.append(getNameToString());
+		sb.append(getIntervalsToString());
+		
+		return sb.toString();
+	}
+
+
+
+	private String getIntervalsToString()
+	{
+		StringBuilder sb = new StringBuilder();
 		if (hasIntervals){
-			str += "\nintervals: ";
-			for (int i: intervals){
-				str += i + ", ";
-			}
-			str += "\nisDominantType=" + isDominantType;
-			str += "\nisMinorType=" + isMinorType;
-			str += "\nisMajorType=" + isMajorType;
-			str += "\nisDiminishedType=" + isDiminishedType;
-			str += "\nisHalfDiminishedType=" + isHalfDiminishedType;
-			str += "\nisDiminishedSeventhType=" + isDiminishedSeventhType;
-		} else {
-			str += "\nno intervals set";
+			sb.append("\nintervals: ");
+			for (int i: intervals) sb.append(i + ", ");
+			sb.append("\nisDominantType=" + isDominantType);
+			sb.append("\nisMinorType=" + isMinorType);
+			sb.append("\nisMajorType=" + isMajorType);
+			sb.append("\nisDiminishedType=" + isDiminishedType);
+			sb.append("\nisHalfDiminishedType=" + isHalfDiminishedType);
+			sb.append("\nisDiminishedSeventhType=" + isDiminishedSeventhType);
+		} 
+		else 
+		{
+			sb.append("\nno intervals set");
 		}
-		
-		
-		return str;
+		return sb.toString();
 	}
+
+
+
+	private String getNameToString()
+	{
+		return hasName ? "\nname=" + name : "\nname not set";
+	}
+
+
+
+	private String getInversionIndexToString()
+	{
+		return hasInversionIndex 
+				? "\ninversionIndex=" + inversionIndex + ", " + inversionName() 
+				: "\ninversionIndex not set";
+	}
+
+
+
+	private String getRootNoteToString()
+	{
+		return hasRootNote 
+				? "\nrootNote=" + rootNote + ", " + CSD.noteName(rootNote)
+				: "\nrootNote not set";
+	}
+
+
+
+	private String getRootNoteIndexToString()
+	{
+		return hasRootNoteIndex 
+				? "\nrootNoteIndex=" + rootNoteIndex
+				: "\nrootNoteIndex not set";
+	}
+
+
+
+	private String getLowestNoteToString()
+	{
+		return hasLowestNote 
+				? "\nlowestNote=" + lowestNote + ", " + CSD.noteName(lowestNote) 
+				: "\nlowestNote not set";
+	}
+	
+	
+	
 	@Override
-	public String chordSymbolToString() {
+	public String chordSymbolToString() 
+	{
 		return CSD.noteName(rootNote) + name;
 	}
+	
+	
+	
 	@Override
-	public String chordSymbolAndInversionToString() {
+	public String chordSymbolAndInversionToString() 
+	{
 		return CSD.noteName(rootNote) + name + " " + inversionName();
 	}
 
+	
+	
 	@Override
-	public boolean isDominantType() {
+	public boolean isDominantType() 
+	{
 		return isDominantType;
 	}
 
+	
+	
 	@Override
-	public boolean isMinorType() {
+	public boolean isMinorType() 
+	{
 		return isMinorType;
 	}
 
+	
+	
 	@Override
-	public boolean isMajorType() {
+	public boolean isMajorType() 
+	{
 		return isMajorType;
 	}
 
+	
+	
 	@Override
-	public boolean isDiminishedType() {
+	public boolean isDiminishedType() 
+	{
 		return isDiminishedType;
 	}
 
+	
+	
 	@Override
-	public boolean isHalfDiminishedType() {
+	public boolean isHalfDiminishedType() 
+	{
 		return isHalfDiminishedType;
 	}
 
+	
+	
 	@Override
-	public boolean isDiminishedSeventhType() {
+	public boolean isDiminishedSeventhType() 
+	{
 		return isDiminishedSeventhType;
 	}
 	
+	
+	
 // privates ============================================================================
-	private void doTypeTest() {
+	
+	
+	private void doTypeTest() 
+	{
 		boolean third = false;
 		boolean minorThird = false;
 		boolean minorSeventh = false;
 		boolean perfectFifth = false;
 		boolean flatFifth = false;
 		boolean dimSeventh = false;
-		for (int i: intervals){
+		for (int i: intervals)
+		{
 			if (i == 4) third = true;
 			if (i == 10) minorSeventh = true;
 			if (i == 3) minorThird = true;
@@ -207,40 +315,44 @@ public class NP_Triad implements NotePatternAnalysis {
 			if (i == 6) flatFifth = true;
 			if (i == 9) dimSeventh = true;
 		}
-		if (third && minorSeventh)isDominantType = true;
+		if (third && minorSeventh) isDominantType = true;
 		if (third && perfectFifth) isMajorType = true;
 		if (minorThird && perfectFifth) isMinorType = true;
 		
 		if (minorThird && flatFifth && minorSeventh) isHalfDiminishedType = true;	// obviously the quartad
 		if (minorThird && flatFifth && dimSeventh) isDiminishedSeventhType = true;
 		if (minorThird && flatFifth && !dimSeventh) isDiminishedType = true;		// diminished triad (not part of diminished7th)
-		
-		
 	}
 
+	
+	
 	@Override
-	public boolean isNinthChord() {
-		// TODO Auto-generated method stub
+	public boolean isNinthChord() 
+	{
 		return false;
 	}
 
+	
+	
 	@Override
-	public boolean isFlatNinth() {
-		// TODO Auto-generated method stub
+	public boolean isFlatNinth() 
+	{
 		return false;
 	}
 
 
+	
 	@Override
 	public int[] extendedChordToneIntervals()
 	{
 		return extendeChordToneIntervals;
 	}
 
+	
+	
 	@Override
 	public void setExtendedChordToneIntervals(int[] arr)
 	{
 		extendeChordToneIntervals = arr;		
 	}
-
 }

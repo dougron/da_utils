@@ -5,11 +5,11 @@ import main.java.da_utils.algorithmic_models.pipeline.pipeline_note_list.Pipelin
 import main.java.da_utils.algorithmic_models.pipeline.plugins.pipeline_plugin.PipelinePlugIn;
 import main.java.da_utils.algorithmic_models.pipeline.plugins.pipeline_plugin.PlayPlugArgument;
 import main.java.da_utils.chord_scale_dictionary.ChordScaleDictionary;
+import main.java.da_utils.four_point_contour.FourPointContour;
 import main.java.da_utils.resource_objects.ChordForm;
 import main.java.da_utils.resource_objects.ContourPack;
 import main.java.da_utils.resource_objects.RandomNumberSequence;
 import main.java.da_utils.test_utils.TestData;
-import DataObjects.contour.FourPointContour;
 import acm.program.ConsoleProgram;
 
 public class PlugInMelodyPhrasedGuideToneConsoleTest extends ConsoleProgram{
