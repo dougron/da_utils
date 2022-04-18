@@ -1,7 +1,6 @@
 package main.java.da_utils.ableton_live.ableton_live_clip;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -17,6 +16,7 @@ import java.util.Iterator;
  * 	2. 	return quantized versions of said noteList
  * 	3. 	may move all the scores to a wrapper class as well
  */
+import java.util.List;
 
 import main.java.da_utils.ableton_live.ableton_live_clip.controller_data_clips.ControllerClip;
 import main.java.da_utils.ableton_live.ableton_live_clip.controller_data_clips.PitchBendClip;
@@ -151,7 +151,7 @@ public class LiveClip {
 		noteList.add(lm);
 		noteListQuantMap.clear();
 	}
-	public void addNoteList(ArrayList<LiveMidiNote> lmnList){
+	public void addNoteList(List<LiveMidiNote> lmnList){
 		for (LiveMidiNote lmn: lmnList){
 			noteList.add(lmn);
 		}

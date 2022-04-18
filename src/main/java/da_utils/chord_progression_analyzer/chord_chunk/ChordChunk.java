@@ -25,7 +25,7 @@ public class ChordChunk
 	
 	
 	private static final int DEFAULT_VELOCITY = 64;
-	public ArrayList<LiveMidiNote> noteList = new ArrayList<LiveMidiNote>();
+	public List<LiveMidiNote> noteList = new ArrayList<LiveMidiNote>();
 	private List<NotePatternAnalysis> chordOptionList;
 	private int bestChordOptionIndex = -1;
 	private double position;
@@ -89,9 +89,9 @@ public class ChordChunk
 	
 	
 	
-	protected ArrayList<LiveMidiNote> makeNoteList(double pos, int[] noteArr, double length) 
+	protected List<LiveMidiNote> makeNoteList(double pos, int[] noteArr, double length) 
 	{
-		ArrayList<LiveMidiNote> list = new ArrayList<LiveMidiNote>();
+		List<LiveMidiNote> list = new ArrayList<LiveMidiNote>();
 		for (int i: noteArr)
 		{
 			list.add(new LiveMidiNote(i, pos, length, DEFAULT_VELOCITY, 0));
@@ -108,7 +108,7 @@ public class ChordChunk
 	
 	
 	
-	public void setChordOptionList(ArrayList<NotePatternAnalysis> chordOptions)
+	public void setChordOptionList(List<NotePatternAnalysis> chordOptions)
 	{
 		chordOptionList = chordOptions;		
 	}
@@ -368,9 +368,9 @@ public class ChordChunk
 	
 	
 	
-	protected ArrayList<Integer> makeNoteValueList(ArrayList<LiveMidiNote> noteList2) 
+	protected List<Integer> makeNoteValueList(List<LiveMidiNote> noteList2) 
 	{
-		ArrayList<Integer> list = new ArrayList<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 		for (LiveMidiNote lmn: noteList2){
 			list.add(lmn.note);
 		}

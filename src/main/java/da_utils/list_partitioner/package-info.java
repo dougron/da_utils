@@ -1,7 +1,7 @@
 /*
  * this does not appear to be my code
  * 
- * no idea where it comes from or what I used it for
+ * this is used in the MuucusLOMInjector to partition lists to a certain size
  */
 
 package main.java.da_utils.list_partitioner;

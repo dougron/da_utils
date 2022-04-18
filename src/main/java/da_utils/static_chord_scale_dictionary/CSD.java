@@ -748,11 +748,23 @@ public class CSD {
 				new InversionHandler(ROOT_POSITION_INDEX, 0), 	
 				new InversionHandler(FOURTH_INVERSION_INDEX, 5), 
 				new InversionHandler(FIRST_INVERSION_INDEX, 4),	
+				new InversionHandler(IRRELEVANT_INVERSION_INDEX, 3),	
 				new InversionHandler(SECOND_INVERSION_INDEX, 2),	
 				new InversionHandler(THIRD_INVERSION_INDEX, 1)},
 				new XMLChordElement[] {XMLChordElement.MINOR_7, XMLChordElement.NINE, XMLChordElement.ELEVEN},
 				new int[] {9},
 				new ChordToneName[] {ChordToneName.ROOT, ChordToneName.NINTH, ChordToneName.THIRD, ChordToneName.ELEVENTH, ChordToneName.FIFTH, ChordToneName.SEVENTH}	
+				),
+		new NotePattern("13", new int[]{0, 2, 4, 7, 9, 10}, ROOT_POSITION_INDEX, new InversionHandler[]{	
+				new InversionHandler(ROOT_POSITION_INDEX, 0), 	
+				new InversionHandler(IRRELEVANT_INVERSION_INDEX, 5), 
+				new InversionHandler(FIRST_INVERSION_INDEX, 4),	
+				new InversionHandler(SECOND_INVERSION_INDEX, 3),	
+				new InversionHandler(IRRELEVANT_INVERSION_INDEX, 2),	
+				new InversionHandler(THIRD_INVERSION_INDEX, 1)},
+				new XMLChordElement[] {XMLChordElement.MINOR_7, XMLChordElement.NINE, XMLChordElement.ELEVEN},
+				new int[] {9},
+				new ChordToneName[] {ChordToneName.ROOT, ChordToneName.NINTH, ChordToneName.THIRD, ChordToneName.FIFTH, ChordToneName.THIRTEENTH, ChordToneName.SEVENTH}	
 				),
 
 	};
