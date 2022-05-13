@@ -152,9 +152,12 @@ public class TimeSignature  implements TSGenInterface{
 				
 				put("5/8", FIVE_EIGHT_32);
 				put("6/8", SIX_EIGHT);
+				put("7/8", SEVEN_EIGHT_322);		// this functions as 7/8 default
 				put("7/8_322", SEVEN_EIGHT_322);
 				put("7/8_223", SEVEN_EIGHT_223);
+				put("9/8", NINE_EIGHT_333);
 				put("9/8_333", NINE_EIGHT_333);
+				put("10/8", TEN_EIGHT_3322);
 				put("10/8_3322", TEN_EIGHT_3322);
 				put("11/8_3332", ELEVEN_EIGHT_3332);
 				put("12/8", TWELVE_EIGHT);
@@ -166,7 +169,9 @@ public class TimeSignature  implements TSGenInterface{
 				
 				put("5/4", FIVE_FOUR);
 				put("6/4_33", SIX_FOUR_33);
+				put("6/4", SIX_FOUR_222);
 				put("6/4_222", SIX_FOUR_222);
+				put("7/4", SEVEN_FOUR_322);
 				put("7/4_322", SEVEN_FOUR_322);
 				put("8/4", EIGHT_FOUR);
 				put("13/4", THIRTEEN_FOUR_CLAPHAM);

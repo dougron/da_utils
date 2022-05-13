@@ -9,4 +9,9 @@ public class IntAndInt {
 		this.i1 = i1;
 		this.i2 = i2;
 	}
+	
+	
+	public String toString() {
+		return "IntAndInt: i1=" + i1 + " i2=" + i2;
+	}
 }
