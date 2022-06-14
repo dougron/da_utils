@@ -205,8 +205,13 @@ public class KeyAnalysis {
 		case 0: degree = "#iv";
 				score = primaryScore;
 				break;
+		case 1: degree = "vii/ii";
+				score = primaryScore;
+				mo = CSD.HARMONIC_MINOR_SEVEN;
+				break;
 		case 2:	degree = "vii";
 				score = primaryScore;
+				mo = CSD.HARMONIC_MINOR_TWO;
 				break;
 		case 3: degree = "#iv";
 				score = primaryScore;
@@ -216,6 +221,7 @@ public class KeyAnalysis {
 //				break;
 		case 5: degree = "vii";
 				score = primaryScore;
+				mo = CSD.HARMONIC_MINOR_FOUR;
 				break;
 		case 6: degree = "#iv";
 				score = primaryScore;
@@ -226,6 +232,7 @@ public class KeyAnalysis {
 //				break;
 		case 8: degree = "vii";
 				score = primaryScore;
+				mo = CSD.HARMONIC_MINOR_SIX;
 				break;
 		case 9: degree = "#iv";
 				score = primaryScore;
@@ -235,6 +242,7 @@ public class KeyAnalysis {
 	//			break;
 		case 11: degree = "vii";
 				score = primaryScore;
+				mo = CSD.HARMONIC_MINOR_SEVEN;
 				break;
 		}
 		majorScore += localMajorScore;

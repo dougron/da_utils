@@ -188,6 +188,8 @@ public class TimeSignature  implements TSGenInterface{
 	private boolean hasTactusInQuarters = false;
 	private ArrayList<Double> subTactusInQuarters;
 	private boolean hasSubTactusInQuarters = false;
+	private ArrayList<Double> subSubTactusInQuarters;
+	private boolean hasSubSubTactusInQuarters = false;
 	private ArrayList<Double> superTactusInQuarters;
 	private boolean hasSuperTactusAsQuarters;
 	protected TreeMap<Integer, ArrayList<SuperTactus>> superTacMap;
@@ -723,6 +725,21 @@ public class TimeSignature  implements TSGenInterface{
 	}
 
 
+	// assumes subsubtactus is half of subtactus
+	private ArrayList<Double> makeSubSubTactusInQuarters()
+	{
+		ArrayList<Double> list = new ArrayList<Double>();
+		double pos = 0.0;
+		while (pos < getLengthInQuarters())
+		{
+			list.add(pos);
+			pos += getSubTactusLength() / 2;
+		}
+		hasSubSubTactusInQuarters = true;
+		return list;
+	}
+	
+	
 	
 	private ArrayList<Double> makeTactusInQuarters()
 	{
@@ -845,6 +862,14 @@ public class TimeSignature  implements TSGenInterface{
 	}
 	
 
+	
+	public Double[] getSubSubTactusAsQuartersPositions()
+	{
+		if (!hasSubSubTactusInQuarters) subSubTactusInQuarters = makeSubSubTactusInQuarters();
+		return subSubTactusInQuarters.toArray(new Double[subSubTactusInQuarters.size()]);
+	}
+	
+	
 	
 
 	public void setTactus(ArrayList<Double> tactus) 

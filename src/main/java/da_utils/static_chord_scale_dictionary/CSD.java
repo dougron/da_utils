@@ -1103,7 +1103,11 @@ public class CSD {
 			public static final ModeObject LOCRIAN_MODE = new ModeObject(7, 7, MAJOR, "locrian");
 			
 			public static final ModeObject HARMONIC_MINOR_ONE = new ModeObject(1, 7, HARMONIC_MINOR, "harmonic minor");
+			public static final ModeObject HARMONIC_MINOR_TWO = new ModeObject(2, 7, HARMONIC_MINOR, "harmonic minor 2");
+			public static final ModeObject HARMONIC_MINOR_FOUR = new ModeObject(4, 7, HARMONIC_MINOR, "harmonic minor 4");
 			public static final ModeObject HARMONIC_MINOR_FIVE = new ModeObject(5, 7, HARMONIC_MINOR, "harmonic minor 5");
+			public static final ModeObject HARMONIC_MINOR_SIX = new ModeObject(6, 7, HARMONIC_MINOR, "harmonic minor 6");
+			public static final ModeObject HARMONIC_MINOR_SEVEN = new ModeObject(7, 7, HARMONIC_MINOR, "harmonic minor 7");
 			
 			public static final ModeObject MELODIC_MINOR_ONE = new ModeObject(1, 7, MELODIC_MINOR, "melodic minor");
 			public static final ModeObject DORIAN_FLAT_TWO = new ModeObject(2, 7, MELODIC_MINOR, "dorian b2");
